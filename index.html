@@ -499,6 +499,22 @@
             </li>
           </ul>
         </div>
+        <div class="subscription">
+          <form>
+            <label class="subscription-label" for="user_email">
+              Subscribe
+            </label>
+            <input
+              type="email"
+              name="email"
+              id="user_email"
+              placeholder="E-mail"
+              class="subscription-input"
+            />
+
+            <button class="subscription-button" type="submit">Subscribe</button>
+          </form>
+        </div>
       </div>
     </footer>
 
@@ -509,6 +525,35 @@
             <use href="./images/icons.svg#icon-close"></use>
           </svg>
         </button>
+        <div class="order-window">
+          <p class="form-message">
+            Leave your contacts and we will call you back
+          </p>
+          <form class="order-form">
+            <label class="order-form-label">
+              Name
+              <input type="name" name="fullname" />
+            </label>
+            <label class="order-form-label">
+              Phone
+              <input type="tel" name="phone" />
+            </label>
+            <label class="order-form-label">
+              Email
+              <input type="email" name="email" />
+            </label>
+            <label class="order-form-label">
+              Comment
+              <textarea
+                name="comment"
+                rows="5"
+                placeholder="Text input"
+              ></textarea>
+            </label>
+            <p>I accept the terms and conditions of the Privacy Policy</p>
+            <button class="send-button" type="submit">Send</button>
+          </form>
+        </div>
       </div>
     </div>
 

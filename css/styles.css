@@ -150,7 +150,6 @@ img {
 
 .studio-desciption {
   display: inline-block;
-  margin-right: 120px;
 }
 
 .bottom-logo {
@@ -213,6 +212,62 @@ img {
 
 .studio-socials-svg {
   fill: var(--light-color);
+}
+
+.subscription {
+  display: flexbox;
+  align-items: center;
+  width: 453px;
+  height: 40px;
+}
+
+.subscription-label {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  text-align: left;
+  color: var(--white-background);
+  display: block;
+  padding-bottom: 16px;
+}
+
+.subscription-input {
+  display: inline-block;
+  border: 1px solid var(--white-background);
+  border-radius: 4px;
+  background-color: transparent;
+  width: 264px;
+  height: 40px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+  padding-left: 8px;
+}
+
+.subscription-button {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: var(--white-background);
+  background-color: var(--brand-color);
+  cursor: pointer;
+  box-sizing: border-box;
+  display: inline-block;
+  height: 40px;
+  padding: 8px 24px;
+  border: none;
+  border-radius: 4px;
+  transition: background-color var(--tr-dur) var(--tr-fn);
+}
+
+.subscription-button:focus,
+.subscription-button:hover {
+  background-color: var(--pressed-color);
+  box-shadow: 0px 4px 4px 0px #00000026;
 }
 
 .hero-section {
@@ -336,7 +391,6 @@ ol {
   letter-spacing: 0.02em;
   color: var(--text-color);
   display: inline-block;
-  margin-top: 8px;
 }
 
 .introduction-section {
@@ -646,6 +700,67 @@ ol {
   box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2),
     0px 1px 3px 0px rgba(0, 0, 0, 0.12), 0px 1px 1px 0px rgba(0, 0, 0, 0.14);
   transition: transform var(--tr-dur) var(--tr-fn);
+}
+
+.order-window {
+  width: 360px;
+  margin: auto;
+}
+
+.form-message {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: var(--dark-color);
+  padding: 72px 24px 0px;
+}
+
+.order-form-label {
+  display: block;
+  color: var(--suble-text-color);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  padding: 4px 0px;
+}
+
+.order-form-label input,
+.order-form-label textarea {
+  display: block;
+  border: 1px solid #2e2f4266;
+  border-radius: 4px;
+  margin-top: 4px;
+}
+
+.send-button {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: var(--white-background);
+  background-color: var(--brand-color);
+  cursor: pointer;
+  box-sizing: border-box;
+  display: block;
+  width: 169px;
+  height: 56px;
+  padding: 16px 32px;
+  border: none;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 4px;
+  transition: background-color var(--tr-dur) var(--tr-fn);
+}
+
+.send-button:focus,
+.send-button:hover {
+  background-color: var(--pressed-color);
+  box-shadow: 0px 4px 4px 0px #00000026;
 }
 
 .close-button {
