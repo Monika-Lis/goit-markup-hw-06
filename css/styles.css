@@ -239,13 +239,11 @@ ol {
   fill: var(--light-color);
 }
 
-.subscription {
-  display: flexbox;
-  align-items: center;
-  height: 40px;
+.studio-newsletter {
+  display: block;
 }
 
-.subscription-label {
+.subscribe-text {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
@@ -253,41 +251,59 @@ ol {
   text-align: left;
   color: var(--white-background);
   display: block;
-  padding-bottom: 16px;
+  box-sizing: border-box;
+  margin-bottom: 16px;
 }
 
-.subscription-input {
-  display: inline-block;
+.studio-newsletter-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 24px;
+}
+
+.studio-newsletter-input {
+  display: flex;
+  width: 264px;
+  height: 40px;
+  gap: 24px;
+  padding: 8px 16px;
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: var(--white-background);
+  background-color: transparent;
   border: 1px solid var(--white-background);
   border-radius: 4px;
-  background-color: transparent;
-  height: 40px;
-  margin-right: 24px;
+  outline: transparent;
 }
 
-.subscription-input::placeholder {
+.studio-newsletter-input::placeholder {
   font-weight: 400;
   font-size: 12px;
-  line-height: 2;
+  line-height: 1.5;
   letter-spacing: 0.04em;
   color: var(--white-background);
   padding-left: 8px;
 }
 
 .subscription-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 165px;
+  height: 40px;
+  padding: 8px 24px;
+  color: var(--white-background);
+  background-color: var(--brand-color);
+  border: none;
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.04em;
-  color: var(--white-background);
-  background-color: var(--brand-color);
   cursor: pointer;
-  box-sizing: border-box;
-  display: inline-block;
-  height: 40px;
-  padding: 8px 24px;
-  border: none;
   border-radius: 4px;
   transition: background-color var(--tr-dur) var(--tr-fn);
 }
@@ -298,14 +314,9 @@ ol {
   box-shadow: 0px 4px 4px 0px #00000026;
 }
 
-.subscription-button-text {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
 .button-icon-send {
-  fill: var(--white-background);
+  margin-left: 16px;
+  fill: currentColor;
 }
 
 /*Hero*/
@@ -727,6 +738,7 @@ ol {
   left: 50%;
   width: 408px;
   min-height: 584px;
+  padding: 72px 24px 24px 24px;
   border-radius: 4px;
   transform: translate(-50%, -50%);
   background: var(--modal-background);
@@ -735,9 +747,35 @@ ol {
   transition: transform var(--tr-dur) var(--tr-fn);
 }
 
-.contact-window {
-  width: 360px;
-  margin: auto;
+.close-button {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--accent-color);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0;
+  cursor: pointer;
+  transition: background-color var(--tr-dur) var(--tr-fn),
+    border var(--tr-dur) var(--tr-fn);
+}
+
+.close-button:hover,
+.close-button:focus,
+.modal-svg:focus,
+.modal-svg:hover {
+  background-color: var(--pressed-color);
+  border: none;
+  fill: var(--white-background);
+}
+
+.close-button-svg {
+  transition: fill var(--tr-dur) var(--tr-fn);
 }
 
 .form-message {
@@ -747,28 +785,91 @@ ol {
   letter-spacing: 0.02em;
   text-align: center;
   color: var(--dark-color);
-  padding-top: 72px;
   padding-bottom: 16px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-form-item {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 8px;
 }
 
 .contact-form-label {
   display: block;
   color: var(--suble-text-color);
   font-size: 12px;
-  font-style: normal;
   font-weight: 400;
   line-height: 1.17;
   letter-spacing: 0.04em;
   padding: 4px 0px;
 }
 
+.contact-form-input-box {
+  position: relative;
+  display: flex;
+  height: 40px;
+  align-items: center;
+}
+
+.contact-form-input {
+  width: 100%;
+  height: 40px;
+  padding-left: 38px;
+  color: var(--dark-color);
+  background-color: transparent;
+  border: 1px solid var(--suble-text-color);
+  border-radius: 4px;
+  outline: transparent;
+  transition: border-color var(--tr-dur) var(--tr-fn);
+}
+
+.contact-form-input:hover,
+.contact-form-input:focus,
+.contact-form-input:active {
+  border-color: var(--brand-color);
+}
+
+.contact-form-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  width: 18px;
+  height: 24px;
+  fill: var(--dark-color);
+  transform: translateY(-50%);
+  transition: fill var(--tr-dur) var(--tr-fn);
+}
+
+.contact-form-input:hover + .contact-form-icon,
+.contact-form-input:focus + .contact-form-icon,
+.contact-form-input:active + .contact-form-icon {
+  fill: var(--brand-color);
+}
+
 .contact-form-textarea {
   width: 100%;
-  display: block;
+  height: 120px;
+  padding: 8px 16px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: var(--suble-text-color);
+  background-color: transparent;
   border: 1px solid #2e2f4266;
   border-radius: 4px;
   margin-top: 4px;
-  resize: vertical;
+  outline: transparent;
+  resize: none;
+  transition: border-color var(--tr-dur) var(--tr-fn);
 }
 
 .contact-form-textarea::placeholder {
@@ -777,55 +878,41 @@ ol {
   font-weight: 400;
   line-height: 1.17;
   letter-spacing: 0.04em;
-  padding: 8px 16px 8px;
 }
 
-.contact-form-textarea:focus-within {
+.contact-form-textarea:hover,
+.contact-form-textarea:focus,
+.contact-form-textarea:active {
   border-color: var(--brand-color);
 }
 
-.contact-form-textarea:focus {
-  outline: none;
-}
-
-.contact-form-icon-wrapper {
+.contact-confirmation {
   display: flex;
-  height: 40px;
+  flex-direction: row;
   align-items: center;
+  position: relative;
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.contact-confirmation-checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
   border: 1px solid #2e2f4266;
-  border-radius: 4px;
-  overflow: hidden;
+  border-radius: 2px;
+  fill: transparent;
+  transition: background-color var(--tr-dur) var(--tr-fn),
+    border var(--tr-dur) var(--tr-fn), fill var(--tr-dur) var(--tr-fn);
 }
 
-.contact-form-icon-wrapper:focus-within {
-  border-color: var(--brand-color);
-}
-
-.contact-form-input {
-  height: 40px;
-  width: 100%;
-  display: block;
+.contact-confirmation-input:checked + .contact-confirmation-label {
+  background-color: var(--pressed-color);
   border: none;
-  padding: 38px;
-  margin-top: 4px;
-  flex-grow: 1;
-}
-
-.contact-form-input:focus {
-  outline: none;
-}
-
-.contact-form-icon {
-  width: 100%;
-  height: 100%;
-  display: inline-block;
-  align-items: center;
-  padding-left: 16px;
-  fill: var(--dark-color);
-}
-
-.contact-form-input .contact-form-icon {
-  fill: var(--brand-color);
+  fill: var(--light-color);
 }
 
 .gdpr-text {
@@ -834,8 +921,6 @@ ol {
   line-height: 1.17;
   letter-spacing: 0.04em;
   color: var(--suble-text-color);
-  padding-top: 16px;
-  padding-bottom: 24px;
 }
 
 .privacy-policy-link {
@@ -868,35 +953,4 @@ ol {
 .send-button:hover {
   background-color: var(--pressed-color);
   box-shadow: 0px 4px 4px 0px #00000026;
-}
-
-.close-button {
-  position: absolute;
-  top: 24px;
-  right: 24px;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--accent-color);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 0;
-  cursor: pointer;
-  transition: background-color var(--tr-dur) var(--tr-fn),
-    border var(--tr-dur) var(--tr-fn);
-}
-
-.close-button:hover,
-.close-button:focus,
-.modal-svg:focus,
-.modal-svg:hover {
-  background-color: var(--pressed-color);
-  border: none;
-  fill: var(--white-background);
-}
-
-.modal-svg {
-  transition: fill var(--tr-dur) var(--tr-fn);
 }
