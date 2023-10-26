@@ -786,7 +786,7 @@ ol {
   letter-spacing: 0.02em;
   text-align: center;
   color: var(--dark-color);
-  padding-bottom: 16px;
+  margin-bottom: 16px;
 }
 
 .contact-form {
@@ -810,7 +810,7 @@ ol {
   font-weight: 400;
   line-height: 1.17;
   letter-spacing: 0.04em;
-  padding: 4px 0px;
+  margin-bottom: 4px;
 }
 
 .contact-form-input-box {
@@ -826,7 +826,7 @@ ol {
   padding-left: 38px;
   color: var(--dark-color);
   background-color: transparent;
-  border: 1px solid var(--suble-text-color);
+  border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 4px;
   outline: transparent;
   transition: border-color var(--tr-dur) var(--tr-fn);
@@ -896,8 +896,16 @@ ol {
   margin-bottom: 24px;
 }
 
+.contact-confirmation-label {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: var(--suble-text-color);
+}
+
 .contact-confirmation-checkbox {
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
   width: 16px;
@@ -916,14 +924,6 @@ ol {
   fill: var(--light-color);
 }
 
-.gdpr-text {
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 1.17;
-  letter-spacing: 0.04em;
-  color: var(--suble-text-color);
-}
-
 .privacy-policy-link {
   text-decoration: underline;
   color: var(--brand-color);
@@ -940,7 +940,7 @@ ol {
   cursor: pointer;
   box-sizing: border-box;
   display: block;
-  width: 169px;
+  min-width: 169px;
   height: 56px;
   padding: 16px 32px;
   border: none;
