@@ -49,7 +49,7 @@ img {
   color: var(--pressed-color);
 }
 
-.hidden {
+.visually-hidden {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -803,6 +803,10 @@ ol {
   margin-bottom: 8px;
 }
 
+.contact-form-forth-item {
+  margin-bottom: 16px;
+}
+
 .contact-form-label {
   display: block;
   color: var(--suble-text-color);
@@ -863,7 +867,7 @@ ol {
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.04em;
-  color: var(--suble-text-color);
+  color: rgba(46, 47, 66, 0.4);
   background-color: transparent;
   border: 1px solid #2e2f4266;
   border-radius: 4px;
@@ -889,6 +893,7 @@ ol {
 
 .contact-confirmation {
   display: flex;
+  justify-content: start;
   flex-direction: row;
   align-items: center;
   position: relative;
@@ -897,6 +902,7 @@ ol {
 }
 
 .contact-confirmation-label {
+  display: block;
   font-weight: 400;
   font-size: 12px;
   line-height: 1.17;
@@ -918,7 +924,7 @@ ol {
     border var(--tr-dur) var(--tr-fn), fill var(--tr-dur) var(--tr-fn);
 }
 
-.contact-confirmation-input:checked + .contact-confirmation-label {
+.contact-confirmation-input:checked + .contact-confirmation-label > span {
   background-color: var(--pressed-color);
   border: none;
   fill: var(--light-color);
